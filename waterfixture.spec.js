@@ -1,0 +1,32 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://accounts-uat.figbytes.biz/Accounts/Login');
+  await page.getByPlaceholder('Please enter email').fill('manisha@binarysemantics.com');
+  await page.getByRole('link', { name: 'Next' }).click();
+  await page.getByPlaceholder('Please enter password').click();
+  await page.getByPlaceholder('Please enter password').fill('BSFB!@#$%90');
+  await page.goto('https://uat.figbytes.biz/Dashboard/StrategyMap.aspx');
+  await page.getByRole('link', { name: 'System Data ' }).click();
+  await page.getByRole('link', { name: 'Water Outlets' }).click();
+  await page.goto('https://angapp-uat.figbytes.biz/idp-response?IDPResponse=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibWFuaXNoYUBiaW5hcnlzZW1hbnRpY3MuY29tIiwiUHJvZmlsZV9pZCI6IjMwIiwiRmlyc3RfbmFtZSI6Ik1hbmlzaGEiLCJMYXN0X25hbWUiOiJUIiwiRW1haWwiOiJtYW5pc2hhQGJpbmFyeXNlbWFudGljcy5jb20iLCJJc0FkbWluaXN0cmF0b3IiOiJUcnVlIiwiSXNTdXBlckFkbWluIjoiRmFsc2UiLCJJc1JlYWRPbmx5QWNjZXNzIjoiRmFsc2UiLCJEYXRhQmFzZU5hbWUiOiIiLCJPcmdhbml6YXRpb25JRCI6IjIzIiwiUHJvZmlsZV9waWMiOiJodHRwczovL2FjY291bnRzLXVhdC5maWdieXRlcy5iaXo6L0ltYWdlcy9EZWZhdWx0UGljLnBuZyIsIkluaXRpYWxzIjoiTVQiLCJUaW1lWm9uZU9mZlNldCI6IjAiLCJVc2VyUHJvZmlsZVVSTCI6Imh0dHBzOi8vYWNjb3VudHMtdWF0LmZpZ2J5dGVzLmJpejovQWNjb3VudHMvVXNlclByb2ZpbGUiLCJSb2xlSUQiOiIyIiwiRGVzdGluYXRpb25VUkwiOiIiLCJuYmYiOjE2ODc5NDczMjksImV4cCI6MTY4Nzk0NzkyOSwiaWF0IjoxNjg3OTQ3MzI5fQ.Er6PNC4UWnoF-phuXEIP_DBth8VFV-CkJDfN1QA1H64');
+  await page.goto('https://angapp-uat.figbytes.biz//data/water-outlets/water-outlets');
+  await page.goto('https://angapp-uat.figbytes.biz/data/water-outlets/water-outlets');
+  await page.getByRole('button', { name: 'Add water fixture' }).click();
+  await page.locator('#mat-input-1').click();
+  await page.locator('#mat-input-1').fill('Water fixture 28 june');
+  await page.getByText('Operational', { exact: true }).click();
+  await page.locator('#mat-select-0').click();
+  await page.getByRole('option', { name: 'Drinking fountain' }).click();
+  await page.locator('#mat-select-2').click();
+  await page.getByRole('option', { name: '10 Apr Fac' }).click();
+  await page.locator('#mat-select-10').click();
+  await page.getByRole('option', { name: 'Water variable 10 apr' }).click();
+  await page.locator('ui-select:nth-child(9) > .ng-touched > ui-label > .font-primary > div > .mat-form-field > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix').click();
+  await page.getByRole('option', { name: 'Surface Water' }).click();
+  await page.locator('div:nth-child(2) > ui-dynamic-form > .dynamic-form > ui-input > div > ui-label > .font-primary > div > .mat-form-field > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix').first().click();
+  await page.locator('#mat-input-3').fill('12');
+  await page.locator('#mat-input-4').click();
+  await page.locator('#mat-input-4').fill('12');
+  await page.getByRole('button', { name: 'Save water fixture' }).click();
+});

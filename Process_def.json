@@ -1,0 +1,22 @@
+[{
+    "Facilitysearch" : "Water process facility",
+    "ProductName" : "product",
+    "ProcessName" : "Automation process1",
+    
+    "ProcessType" : "Initial",
+    "FromDate" : "30/06/2023",
+    "Todate" : "30/06/2023",
+    "Hours" : "1",
+    "BenchmarkYear" : "2023",
+    "TypeofInflow" : "Ground Water",
+    "FreqAutocal" : "Monthly",
+    "Quantity" : "20",
+    "AttFromDate" : "02/06/2023",
+    "AttToDate" : "02/06/2023",
+    "Impact" : "Evaporation(Non Product Related)",
+    "ImpactAmt" : "123",
+    "ImpactCon" : "Volume Consumed",
+    "WaterCost" : "Total Process Cost",
+    "TotalCost" : "234"
+        
+}]
